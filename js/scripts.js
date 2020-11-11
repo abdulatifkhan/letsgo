@@ -22,6 +22,11 @@ elForm.addEventListener ('submit', function (evt) {
 
   var elNumberInput = parseFloat(elForm.querySelector('.masofa-input').value.trim(), 10);
 
+  if (elNumberInput < 0) {
+    alert('Masofa manfiy bo\'lishi mumkin emas');
+    return;
+  } 
+
   var tezlikPiyodaSoat = (elNumberInput / PIYODA).toFixed(2);
   var piyodaSoat = tezlikPiyodaSoat - Math.floor(tezlikPiyodaSoat).toFixed(2);
   var piyodaDaqiqa = 60 * piyodaSoat % 100;
